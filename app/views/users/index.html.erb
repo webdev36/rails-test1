@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-md-12">
+    <% Genre.all.each do |genre| %>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" value="<%= genre.id %>"><%= genre.name %>
+        </label>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-md-12">
+    <button type="submit" class="btn btn-primary" id="btn_genre_filter">Filter</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table" id="user_list">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render User.all %>
+      </tbody>
+    </table>
+  </div>
+</div>
